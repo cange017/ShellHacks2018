@@ -21,10 +21,6 @@ exports.translate = functions.https.onRequest((req, res) => {
             newDataObj.id = key;
             prettyData.push(newDataObj);
         }
-        console.log('changing state to', {
-            chats: prettyData
-        });
-        console.log('done setting state', this.state);
     });
     
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
