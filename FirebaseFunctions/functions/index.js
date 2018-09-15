@@ -16,6 +16,7 @@ exports.translate = functions.https.onRequest((req, res) => {
         console.log('new valueee!!!!!!');
         let data = snapshot.val();
         prettyData = [];
+        prettyData.push('testBackend');
         for (let key in data) {
             let newDataObj = data[key];
             newDataObj.id = key;
