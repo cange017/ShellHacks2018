@@ -11,8 +11,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     const id = req.query.id;
     
     let chatsRef = admin.database().ref('chats');
-    return res.status(200).send(chatsRef);
-    /*
+    
     chatsRef.on('value', snapshot => {
         console.log('new valueee!!!!!!');
         let data = snapshot.val();
@@ -34,7 +33,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
     return res.status(200).send(correctChat);
     
-    */
+    
     /*
     let correctChat = this.props.chats.find(
       chat => id === this.props.selectedChat
