@@ -1,5 +1,5 @@
 import React from 'react';
-//const {google} = require('googleapis');
+const {google} = require('googleapis');
 const ME = 'davidnagli'
 
 // chat user's name
