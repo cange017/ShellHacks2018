@@ -1,6 +1,6 @@
 <script src="https://apis.google.com/js/api.js"></script>
 <script>
-function start() {
+function translate(source, target, message) {
     gapi.client.init({
           'apiKey': 'AIzaSyB4ZpaKaLtxoQcCdU_FCBS9SrTw1tzvxE0',
           'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/translate/v2/rest'],
@@ -8,12 +8,12 @@ function start() {
           // Executes an API request, and returns a Promise.
           // The method name `language.translations.list` comes from the API discovery.
           return gapi.client.language.translations.list({
-            q: 'hello world',
-            source: 'en',
-            target: 'de',
+            q: message,
+            source: source,
+            target: target,
           });
         }).then(function(response) {
-          console.log(response.result.data.translations[0].translatedText);
+          return();
         }, function(reason) {
           console.log('Error: ' + reason.result.error.message);
         });
