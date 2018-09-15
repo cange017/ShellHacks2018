@@ -6,6 +6,10 @@ admin.initializeApp();
 // Take the text parameter passed to this HTTP endpoint and insert it into the
 // Realtime Database under the path /messages/:pushId/original
 exports.translate = functions.https.onRequest((req, res) => {
+    
+    const language = req.query.language;
+    const id = req.query.id;
+    
     let chatsRef = firebase.database().ref('chats');
     chatsRef.on('value', snapshot => {
         console.log('new valueee!!!!!!');
@@ -24,8 +28,13 @@ exports.translate = functions.https.onRequest((req, res) => {
         }));
         console.log('done setting state', this.state);
     });
+    
+    
+    let correctChat = this.props.chats.find(
+      chat => id === this.props.selectedChat
+    );
     // Grab the text parameter.
-    const original = req.query.text;
+    
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
     return this.chats;
 });
