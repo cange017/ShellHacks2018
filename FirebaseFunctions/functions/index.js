@@ -13,7 +13,6 @@ const translate = new Translate({
   projectId: projectId,
 });
 
-const google = require('@
 admin.initializeApp();
 // Take the text parameter passed to this HTTP endpoint and insert it into the
 // Realtime Database under the path /messages/:pushId/original
