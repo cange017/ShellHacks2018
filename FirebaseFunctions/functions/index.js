@@ -31,7 +31,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     });
     
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
-    return res.status(200).send(correctChat);
+    return res.status(200).send(this.props.chats);
     
     
     /*
