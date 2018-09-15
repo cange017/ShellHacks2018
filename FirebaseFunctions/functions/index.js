@@ -26,7 +26,7 @@ exports.translate = functions.https.onRequest((req, res) => {
         }).then(function() {
           // Executes an API request, and returns a Promise.
           // The method name `language.translations.list` comes from the API discovery.
-          return gapi.client.language.translations.list({
+          gapi.client.language.translations.list({
             q: 'hospital',
             source: 'en',
             target: 'de',
