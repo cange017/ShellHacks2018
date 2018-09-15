@@ -11,11 +11,11 @@ exports.translate = functions.https.onRequest((req, res) => {
     const id = req.query.id;
     
     let chatsRef = admin.database().ref('chats');
-    
+    let prettyData = [];
     chatsRef.on('value', snapshot => {
         console.log('new valueee!!!!!!');
         let data = snapshot.val();
-        let prettyData = [];
+        prettyData = [];
         for (let key in data) {
             let newDataObj = data[key];
             newDataObj.id = key;
@@ -24,14 +24,11 @@ exports.translate = functions.https.onRequest((req, res) => {
         console.log('changing state to', {
             chats: prettyData
         });
-        this.setState(() => ({
-            chats: prettyData
-        }));
         console.log('done setting state', this.state);
     });
     
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
-    return res.status(200).send(this.props.chats);
+    return res.status(200).send(prettyData);
     
     
     /*
