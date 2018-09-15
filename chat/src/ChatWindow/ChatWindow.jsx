@@ -1,5 +1,5 @@
 import React from 'react';
-import google from 'https://apis.google.com/js/api.js';
+const {google} = require('googleapis');
 const ME = 'davidnagli'
 
 // chat user's name
@@ -11,7 +11,7 @@ class ChatHeader extends React.Component {
 }
 
 function start(message) {
-    gapi.client.init({
+    google.gapi.client.init({
           'apiKey': 'AIzaSyB4ZpaKaLtxoQcCdU_FCBS9SrTw1tzvxE0',
           'discoveryDocs': ['https://translation.googleapis.com/$discovery/rest?version=v2'],
         }).then(function() {
