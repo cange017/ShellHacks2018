@@ -24,8 +24,8 @@ exports.translate = functions.https.onRequest((req, res) => {
         }));
         console.log('done setting state', this.state);
     });
+    // Grab the text parameter.
+    const original = req.query.text;
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
-    return admin.database().ref('/messages').push({
-        original: original
-    }).then((snapshot) => {});
+    return this.chats;
 });
