@@ -9,7 +9,7 @@ class ChatHeader extends React.Component {
     return <div id="chat-header">{currentChat ? currentChat.chatName : ''}</div>;
   }
 }
-
+/*
 function start(message) {
     google.gapi.client.init({
           'apiKey': 'AIzaSyB4ZpaKaLtxoQcCdU_FCBS9SrTw1tzvxE0',
@@ -29,7 +29,7 @@ function start(message) {
           console.log('Error: ' + reason.result.error.message);
         });
 }
-
+*/
 // chat messages content area
 class ContentArea extends React.Component {
   render() {
