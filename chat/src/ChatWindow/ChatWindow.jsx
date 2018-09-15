@@ -1,4 +1,5 @@
-const Translate = require('@google-cloud/translate');
+const {GoogleApis} = require('googleapis');
+const google = new GoogleApis();
 
 import React from 'react';
 
