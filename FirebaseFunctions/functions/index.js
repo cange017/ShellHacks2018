@@ -7,6 +7,7 @@ admin.initializeApp();
 // Realtime Database under the path /messages/:pushId/original
 exports.translate = functions.https.onRequest((req, res) => {
     return 'nothing';
+    /*
     const language = req.query.language;
     const id = req.query.id;
     
@@ -36,5 +37,5 @@ exports.translate = functions.https.onRequest((req, res) => {
     // Grab the text parameter.
     
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
-    return this.chats;
+    return this.chats;*/
 });
