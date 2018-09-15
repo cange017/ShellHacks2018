@@ -1,5 +1,7 @@
-import React from 'react';
 const Translate = require('@google-cloud/translate');
+
+import React from 'react';
+
 const ME = 'davidnagli'
 
 // chat user's name
