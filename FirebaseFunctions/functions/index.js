@@ -29,12 +29,13 @@ exports.translate = functions.https.onRequest((req, res) => {
         console.log('done setting state', this.state);
     });
     
-    
+    // Push the new message into the Realtime Database using the Firebase Admin SDK.
+    return res.status(200).send(correctChat);
+    /*
     let correctChat = this.props.chats.find(
       chat => id === this.props.selectedChat
     );
     // Grab the text parameter.
+    */
     
-    // Push the new message into the Realtime Database using the Firebase Admin SDK.
-    return res.status(200).send(correctChat);
 });
