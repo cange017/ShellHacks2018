@@ -13,7 +13,7 @@ function translate(source, target, message) {
             target: target,
           });
         }).then(function(response) {
-          return();
+          return(response.result.data.translations[0].translatedText);
         }, function(reason) {
           console.log('Error: ' + reason.result.error.message);
         });
