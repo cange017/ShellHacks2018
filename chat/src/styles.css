@@ -11,6 +11,7 @@ body {
   top: 0px;
   width: 20vw;
   text-align: center;
+  
 }
 
 #chat-window {
@@ -21,12 +22,17 @@ body {
   height: 100vh;
   width: 80vw;
   float: right;
+  border-left: 1px solid black;
 }
 
 #chat-header {
-  background-color: #3798db;
+  background: linear-gradient(to bottom right, pink, #99b8e0);
+  color: black;
+  background-blend-mode: overlay;
   padding: 15px 30px;
   font-weight: bold;
+  width: 80vw;
+  
 }
 
 div.chat-selector {
@@ -43,9 +49,17 @@ div.chat-selector:hover {
   background-color: grey;
 }
 
-#compose-form{
+#compose-form {
   position: absolute;
-  bottom: 0px; 
+  bottom: 0px;
   width: 100%;
   padding: 20px;
+}
+
+.me {
+  font-weight: bold;
+}
+
+.them {
+  font-style: italic;
 }

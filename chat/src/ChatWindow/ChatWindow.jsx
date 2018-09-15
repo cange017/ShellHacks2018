@@ -1,9 +1,11 @@
 import React from 'react';
+const ME = 'davidnagli'
 
 // chat user's name
 class ChatHeader extends React.Component {
   render() {
-    return <div id="chat-header">Catherine</div>;
+    let currentChat = this.props.chats.find(chat => chat.id === this.props.selectedChat)
+    return <div id="chat-header">{currentChat ? currentChat.chatName : ''}</div>;
   }
 }
 
@@ -18,7 +20,7 @@ class ContentArea extends React.Component {
         {correctChat &&
           correctChat.messages &&
           correctChat.messages.map((message, i) => (
-            <div key={i}>{message.content}</div>
+            <div key={i} className={message.from === ME ? 'me' : 'them'}>{message.content}</div>
           ))}
       </div>
     );
@@ -29,15 +31,29 @@ class ComposeForm extends React.Component {
   render() {
     return <div>
       <form action="#" onSubmit={evt=>this.submitHandler(evt)}>
-        <input type="text" id="compose-form" autoComplete="off" placeholder="Type here..."/>
+        <input type="text" id="compose-form" autoComplete="off" placeholder="Type here..." />
       </form>
+      
+      
     </div>
   }
+
+
 
   submitHandler(evt){
     let composeForm = document.querySelector('#compose-form');
     let input = composeForm.value;
-    let nextID = this.props.chats[this.props.selectedChat].messages.length
+    let currentChat = this.props.chats.find(chat => chat.id === this.props.selectedChat)
+    let nextID = (currentChat && currentChat.messages && currentChat.messages.length) || 0
+    // let nextID
+    // try{
+    //   nextID = this.props.chats[this.props.selectedChat].messages.length;
+    // } catch (err) {
+    //   console.error('err', err)
+    //   console.log('this.props.chats[this.props.selectedChat]',this.props.chats[this.props.selectedChat])
+    //   nextID = 0;
+    // }
+    
     composeForm.value = ''
     console.log('input', input)
     console.log('this.props.selectedChat', this.props.selectedChat)
@@ -58,7 +74,7 @@ export default class ChatWindow extends React.Component {
   render() {
     return (
       <div id="chat-window">
-        <ChatHeader />
+        <ChatHeader selectedChat={this.props.selectedChat} chats={this.props.chats} />
         <ContentArea selectedChat={this.props.selectedChat} chats={this.props.chats}/>
         <ComposeForm firebase={this.props.firebase} selectedChat={this.props.selectedChat} chats={this.props.chats}/>
       </div>
