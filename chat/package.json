@@ -1,6 +1,18 @@
 {
   "name": "chat",
   "version": "1.0.0",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^5.5.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.5.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  }
 }
