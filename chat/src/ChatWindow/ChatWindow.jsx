@@ -1,4 +1,4 @@
-import Translate from '@google-cloud/translate';
+//import Translate from '@google-cloud/translate';
 
 import React from 'react';
 
