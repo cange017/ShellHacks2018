@@ -1,0 +1,43 @@
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+function start() {
+    gapi.client.init({
+          'apiKey': 'AIzaSyB4ZpaKaLtxoQcCdU_FCBS9SrTw1tzvxE0',
+          'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/translate/v2/rest'],
+        }).then(function() {
+          // Executes an API request, and returns a Promise.
+          // The method name `language.translations.list` comes from the API discovery.
+          return gapi.client.language.translations.list({
+            q: 'hello world',
+            source: 'en',
+            target: 'de',
+          });
+        }).then(function(response) {
+          console.log(response.result.data.translations[0].translatedText);
+        }, function(reason) {
+          console.log('Error: ' + reason.result.error.message);
+        });
+}
+gapi.load('client', start);
+    /*
+var request = new XMLHttpRequest();
+request.open('POST', 'https://translation.googleapis.com/language/translate/v2', true);
+request.setRequestHeader('Content-Type', 'application/json');
+request.setRequestHeader('q', 'hello');
+request.setRequestHeader('target', 'ru');    
+request.onload = function () {
+
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response);
+
+  if (request.status >= 200 && request.status < 400) {
+    data.forEach(movie => {
+      console.log(movie.title);
+    });
+  } else {
+    console.log('error');
+  }
+}
+
+request.send();*/
+</script>
