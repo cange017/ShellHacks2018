@@ -37,8 +37,18 @@ class ComposeForm extends React.Component {
   submitHandler(evt){
     let composeForm = document.querySelector('#compose-form');
     let input = composeForm.value;
+    let nextID = this.props.chats[this.props.selectedChat].messages.length
     composeForm.value = ''
     console.log('input', input)
+    console.log('this.props.selectedChat', this.props.selectedChat)
+    let idToSet = this.props.selectedChat;
+    console.log('this.props.chats',this.props.chats)
+    let newMessageRef = this.props.firebase.database().ref(`/chats/${idToSet}/messages/${nextID}`)
+    newMessageRef.set({
+      content: input,
+      from: 'davidnagli',
+      originLanguage: 'English'
+    });
     evt.preventDefault();
   }
 }
@@ -50,7 +60,7 @@ export default class ChatWindow extends React.Component {
       <div id="chat-window">
         <ChatHeader />
         <ContentArea selectedChat={this.props.selectedChat} chats={this.props.chats}/>
-        <ComposeForm/>
+        <ComposeForm firebase={this.props.firebase} selectedChat={this.props.selectedChat} chats={this.props.chats}/>
       </div>
     );
   }

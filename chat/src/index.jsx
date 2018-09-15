@@ -66,6 +66,7 @@ class App extends React.Component {
         <ChatWindow
           selectedChat={this.state.selectedChat}
           chats={this.state.chats}
+          firebase={firebase}
         />
       </div>
     );
