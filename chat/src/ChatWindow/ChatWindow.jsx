@@ -40,7 +40,7 @@ class ContentArea extends React.Component {
         {correctChat &&
           correctChat.messages &&
           correctChat.messages.map((message, i) => (
-            <div key={i} className={message.from === ME ? 'me' : 'them'}>{message.content}</div>
+            <div key={i} className={message.from === ME ? 'me' : 'them'}>{start(message.content)}</div>
           ))}
       </div>
     );
