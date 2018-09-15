@@ -8,6 +8,7 @@ admin.initializeApp();
 exports.translate = functions.https.onRequest((req, res) => {
     const language = req.query.language;
     const id = req.query.id;
+    console.log("ver 1");
     let chatsRef = admin.database().ref('chats').on("value", function (snapshot) {
         return res.status(200).send(snapshot.val());
     }, function (errorObject) {
