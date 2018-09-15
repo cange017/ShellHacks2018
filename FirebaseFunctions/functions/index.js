@@ -6,7 +6,7 @@ admin.initializeApp();
 // Take the text parameter passed to this HTTP endpoint and insert it into the
 // Realtime Database under the path /messages/:pushId/original
 exports.translate = functions.https.onRequest((req, res) => {
-    
+    return 'nothing';
     const language = req.query.language;
     const id = req.query.id;
     
