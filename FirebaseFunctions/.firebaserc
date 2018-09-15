@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "chatapp-1536990253793"
+    "default": "chatapp-1536990253793",
+    "shellchat": "shellchat2018"
   }
 }
