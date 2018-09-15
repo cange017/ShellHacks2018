@@ -10,7 +10,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     const language = req.query.language;
     const id = req.query.id;
     
-    let chatsRef = firebase.database().ref('chats');
+    let chatsRef = admin.database().ref('chats');
     chatsRef.on('value', snapshot => {
         console.log('new valueee!!!!!!');
         let data = snapshot.val();
