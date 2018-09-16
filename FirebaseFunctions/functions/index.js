@@ -31,17 +31,15 @@ exports.translate = functions.https.onRequest((req, res) => {
         , });
     }).then(function (response) {
         console.log(response.result.data.translations[0].translatedText);
-        
     }, function (reason) {
         console.log('Error: ' + reason.result.error.message);
     });
-    
     let chatsRef = admin.database().ref('chats').on("value", function (snapshot) {
-            return res.status(200).send(snapshot.val());
-        }, function (errorObject) {
-            console.log("The read failed: " + errorObject.code);
-        });
-}
+        return res.status(200).send(snapshot.val());
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+});
     /*
     gapi.client.init({
           'apiKey': 'AIzaSyD1o-JutApo-Kp_CLOFnkUrgn4df5y-KT8',
