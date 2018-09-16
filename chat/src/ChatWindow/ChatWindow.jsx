@@ -144,7 +144,7 @@ class ContentArea extends React.Component {
   ) {
             <div key={i} className={message.from === ME ? 'me' : 'them'}>{resp.data.translations[0].translatedText}</div>
                 }
-          ))
+          )))}
       </div>
     );
   }
