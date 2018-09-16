@@ -11,7 +11,7 @@ const apiKey = "AIzaSyDj8r082goFM0L51LrF55UKJInRtX5G0UA";
 
 // Set endpoints
 const endpoints = {
-  translate: "",
+  translate: "sp",
   detect: "detect",
   languages: "languages"
 };
