@@ -43,6 +43,7 @@ exports.translate = functions.https.onRequest((req, res) => {
           console.log('Error: ' + reason.result.error.message);
         });
     
+    return res.status(200).send('nothing');
     
     /*
     gapi.client.init({
