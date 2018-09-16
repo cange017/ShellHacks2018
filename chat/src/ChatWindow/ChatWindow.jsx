@@ -52,6 +52,7 @@ class ChatHeader extends React.Component {
 // chat messages content area
 class ContentArea extends React.Component {
     componentDidMount() {
+        console.log('mounted');
         let correctChat = this.props.chats.find(
       chat => chat.id === this.props.selectedChat
     );
