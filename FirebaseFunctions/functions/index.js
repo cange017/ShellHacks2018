@@ -25,8 +25,9 @@ exports.translate = functions.https.onRequest((req, res) => {
         const translation = results[0];
         console.log(`Text: ${text}`);
         console.log(`Translation: ${translation}`);
+        return res.status(200).send('none');
     }).catch(err => {
         console.error('ERROR:', err);
     });
-    return res.status(200).send('none');
+    
 });
