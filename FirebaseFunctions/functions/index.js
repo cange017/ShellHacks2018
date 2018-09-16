@@ -39,7 +39,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
-});
+    
     /*
     gapi.client.init({
           'apiKey': 'AIzaSyD1o-JutApo-Kp_CLOFnkUrgn4df5y-KT8',
