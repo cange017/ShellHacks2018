@@ -97,9 +97,6 @@ class ContentArea extends React.Component {
       return (
         <div id="messages">
           {correctChat &&
-            correctChat.messages &&
-                  this.state &&
-            this.state.messages && console.log('messages in state', this.state.messages) &&
             this.state.messages.map((message, i) => (
               <li
                 key={i}
