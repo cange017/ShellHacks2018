@@ -27,7 +27,7 @@ exports.translate = functions.https.onRequest((req, res) => {
           // The method name `language.translations.list` comes from the API discovery.
             let message = 'error';
             let chatsRef = admin.database().ref('chats').on("value", function (snapshot) {
-                message = snapshot.val();
+                return res.status(200).send(snapshot.val());
             }, function (errorObject) {
                 console.log("The read failed: " + errorObject.code);
             });
