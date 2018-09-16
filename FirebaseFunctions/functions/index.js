@@ -25,13 +25,13 @@ exports.translate = functions.https.onRequest((req, res) => {
         }).then(function() {
           // Executes an API request, and returns a Promise.
           // The method name `language.translations.list` comes from the API discovery.
-            let message = 'error';
+            /*let message = 'error';
             let chatsRef = admin.database().ref('chats').on("value", function (snapshot) {
                 return res.status(200).send(snapshot.val());
             }, function (errorObject) {
                 console.log("The read failed: " + errorObject.code);
             });
-
+*/
           return gapi.client.language.translations.list({
             q: message,
             source: 'en',
