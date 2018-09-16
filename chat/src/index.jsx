@@ -68,8 +68,8 @@ class App extends React.Component {
       console.log('changing state to', { chats: prettyData });
       this.setState(() => ({ chats: prettyData }));
       console.log('done setting state', this.state);
-    };
-  });
+    });
+  }
 
   chatChangeHandler = chat => {
     this.setState({
