@@ -61,7 +61,7 @@ class ContentArea extends React.Component {
                   message.from === window.localStorage.username ? 'me' : 'them'
                 }
               >
-                <span>{this.getTranslation(message.content)}</span>
+                <span>{await this.getTranslation(message.content)}</span>
               </li>
             ))}
         </div>
