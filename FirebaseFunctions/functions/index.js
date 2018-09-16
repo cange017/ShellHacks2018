@@ -20,6 +20,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     const text = 'Hello, world!';
     // The target language
     const target = 'ru';
+    console.log(translate);
     // Translates some text into Russian
     translate.translate(text, target).then(results => {
         const translation = results[0];
