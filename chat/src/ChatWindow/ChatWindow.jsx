@@ -1,6 +1,6 @@
 import React from 'react';
 
-addMessage(message)
+function addMessage(message)
 {
     //create a unike key for each new fruit item
      var timestamp = (new Date()).getTime();
@@ -15,7 +15,7 @@ addMessage(message)
     ContentArea.forceUpdate();
 }
 
-async getTranslation(originalText, target) {
+async function getTranslation(originalText, target) {
   console.log('originalText', originalText);
   console.log('target', target);
   let url = `https://translation.googleapis.com/language/translate/v2?key=AIzaSyDj8r082goFM0L51LrF55UKJInRtX5G0UA&q=${originalText}&target=${target}`;
