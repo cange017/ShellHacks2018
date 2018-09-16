@@ -76,7 +76,7 @@ class ContentArea extends React.Component {
         {
             console.log('mounted3');
             console.log('messages', correctChat.messages);
-            correctChat.messages.map((message,i) => getTranslation(message.content, 'es'););
+            correctChat.messages.map((message,i) => getTranslation(message.content, 'es'));
             console.log('message', message.content);
             
         }
