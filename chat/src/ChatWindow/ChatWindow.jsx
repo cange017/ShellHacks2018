@@ -76,7 +76,7 @@ class ContentArea extends React.Component {
         {
             console.log('mounted3');
         for(let message in correctChat.messages) {
-            getTranslation(message, 'es');
+            getTranslation(message.content, 'es');
         }
         }
     try {
