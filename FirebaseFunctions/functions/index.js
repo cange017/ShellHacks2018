@@ -12,7 +12,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     admin.initializeApp();
     const language = req.query.language;
     const id = req.query.id;
-    console.log("ver 5");
+    console.log("ver 6");
     const translate = new googleTranslate({
         projectId: projectId
     , });
