@@ -55,6 +55,7 @@ class App extends React.Component {
 
       let prettyData = [];
       for (let key in data) {
+        let newDataObj = data[key];
         newDataObj.id = key;
         prettyData.push(newDataObj);
       }
