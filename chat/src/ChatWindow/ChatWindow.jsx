@@ -32,6 +32,7 @@ class ContentArea extends React.Component {
     
     addMessage(message)
     {
+        console.log('add message');
         //create a unike key for each new fruit item
          var timestamp = (new Date()).getTime();
 
