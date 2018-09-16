@@ -82,6 +82,7 @@ class ContentArea extends React.Component {
         <div id="messages">
           {correctChat &&
             correctChat.messages &&
+                  this.state &&
             this.state.messages &&
             this.state.messages.map((message, i) => (
               <li
