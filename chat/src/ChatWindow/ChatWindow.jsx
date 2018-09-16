@@ -1,11 +1,20 @@
 import React from 'react';
 
+function addMessage(message)
+{
+    //create a unike key for each new fruit item
+     var timestamp = (new Date()).getTime();
+     // update the state object
+     this.state.messages['messages-' + timestamp ] = fruit;
+     // set the state
+     this.setState({ messages : this.state.messages });
+}
+
 async function getTranslation(originalText, target) {
   console.log('originalText', originalText);
   console.log('target', target);
   let url = `https://translation.googleapis.com/language/translate/v2?key=AIzaSyDj8r082goFM0L51LrF55UKJInRtX5G0UA&q=${originalText}&target=${target}`;
-  let result = await fetch(url, { method: 'POST' }).then(res => {res.json().result.data.translations[0].translatedText;
-                                                         this.setState({result: res});
+  let result = await fetch(url, { method: 'POST' }).then(res => {addMessage(res.json().result.data.translations[0].translatedText);
                                                                 }
                                                         ).catch(err => ({}))
   console.log('result', result);
@@ -38,11 +47,21 @@ class ChatHeader extends React.Component {
 
 // chat messages content area
 class ContentArea extends React.Component {
+    componentDidMount() {
+        let correctChat = this.props.chats.find(
+      chat => chat.id === this.props.selectedChat
+    );
+        
+        for(let message in correctChat.messages) {
+            getTranslation(message, 'es');
+        }
+        
+    }
+    
   render() {
     let correctChat = this.props.chats.find(
       chat => chat.id === this.props.selectedChat
     );
-
     try {
       // let translatedMessagesForCorrectChat = [];
       // let results = correctChat.messages.map(message =>
