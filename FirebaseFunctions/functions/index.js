@@ -17,7 +17,7 @@ admin.initializeApp();
 exports.translate = functions.https.onRequest((req, res) => {
     const language = req.query.language;
     const id = req.query.id;
-    console.log("ver 3");
+    console.log("ver 4");
     
     return res.status(200).send(gapi.client.init({
           'apiKey': 'AIzaSyD1o-JutApo-Kp_CLOFnkUrgn4df5y-KT8',
