@@ -2,9 +2,7 @@
 const functions = require('firebase-functions');
 // The Firebase Admin SDK to access the Firebase Realtime Database.
 const admin = require('firebase-admin');
-const {
-    Translate
-} = require('@google-cloud/translate');
+const Translate = require('@google-cloud/translate');
 // Your Google Cloud Platform project ID
 const projectId = 'shellchat2018';
 // Instantiates a client
