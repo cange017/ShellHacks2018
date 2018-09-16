@@ -61,7 +61,7 @@ class App extends React.Component {
             let obj = message;
             obj.content = await getTranslation(
               message.content,
-              window.localStorage.understoodLang
+              window.localStorage.understoodLang);
         newDataObj.id = key;
         prettyData.push(newDataObj);
       }
