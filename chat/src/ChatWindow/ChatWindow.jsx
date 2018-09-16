@@ -136,7 +136,7 @@ class ContentArea extends React.Component {
         {correctChat &&
           correctChat.messages &&
           correctChat.messages.map((message, i) => (
-                var resp = makeApiRequest(endpoints.translate, message.content, "GET", false);
+                resp = makeApiRequest(endpoints.translate, message.content, "GET", false);
             <div key={i} className={message.from === ME ? 'me' : 'them'}>{resp.data.translations[0].translatedText}</div>
           ))}
       </div>
