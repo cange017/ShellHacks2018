@@ -69,7 +69,7 @@ class App extends React.Component {
       this.setState(() => ({ chats: prettyData }));
       console.log('done setting state', this.state);
     };
-  }
+  });
 
   chatChangeHandler = chat => {
     this.setState({
