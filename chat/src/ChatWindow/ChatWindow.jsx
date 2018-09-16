@@ -34,10 +34,7 @@ class ContentArea extends React.Component {
     {
         //create a unike key for each new fruit item
          var timestamp = (new Date()).getTime();
-         if(!this.state.messages)
-            {
-             this.state.messages = [];
-            }
+
          // update the state object
          this.state.messages['messages-' + timestamp ] = fruit;
          // set the state
@@ -55,6 +52,10 @@ class ContentArea extends React.Component {
       console.log('result', result);
       return result;
     }
+    constructor() {
+    super();
+    this.state = { messages: [] };
+  }
     
     componentDidMount() {
         console.log('mounted');
