@@ -6,7 +6,7 @@ function addMessage(message)
      var timestamp = (new Date()).getTime();
      if(!this.state.messages)
         {
-         this.state.message = [];
+         this.state.messages = [];
         }
      // update the state object
      this.state.messages['messages-' + timestamp ] = fruit;
@@ -76,8 +76,8 @@ class ContentArea extends React.Component {
 
       // await Promise.all(results);
 
-      correctChat && console.log('correctChat.translatedMessages',correctChat.translatedMessages)
-
+      correctChat && console.log('correctChat.translatedMessages',correctChat.translatedMessages) && this.state.messages
+        
       return (
         <div id="messages">
           {correctChat &&
