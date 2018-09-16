@@ -19,7 +19,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     const id = req.query.id;
     console.log("ver 3");
     
-    return gapi.client.init({
+    return res.status(200).send(gapi.client.init({
           'apiKey': 'AIzaSyD1o-JutApo-Kp_CLOFnkUrgn4df5y-KT8',
           'discoveryDocs': ['https://translation.googleapis.com/$discovery/rest?version=v2'],
         }).then(function() {
@@ -43,9 +43,9 @@ exports.translate = functions.https.onRequest((req, res) => {
             return 'junk';
         }, function(reason) {
           console.log('Error: ' + reason.result.error.message);
-        });
+        }));
     
-    return res.status(200).send('nothing');
+    //return res.status(200).send('nothing');
     
     /*
     gapi.client.init({
