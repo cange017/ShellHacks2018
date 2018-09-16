@@ -4,7 +4,7 @@ function getTranslation(originalText, target) {
   console.log('originalText', originalText);
   console.log('target', target);
   let url = `https://translation.googleapis.com/language/translate/v2?key=AIzaSyDj8r082goFM0L51LrF55UKJInRtX5G0UA&q=${originalText}&target=${target}`;
-  let result = await fetch(url, { method: 'POST' }).then(res => res.json().result.data.translations[0].translatedText).catch(err => ({}))
+  let result = fetch(url, { method: 'POST' }).then(res => res.json().result.data.translations[0].translatedText).catch(err => ({}))
   console.log('result', result)
   return result;
 }
