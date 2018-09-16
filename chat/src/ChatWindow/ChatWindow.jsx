@@ -94,7 +94,7 @@ class ContentArea extends React.Component {
           {correctChat &&
             correctChat.messages &&
                   this.state &&
-            this.state.messages &&
+            this.state.messages && console.log('messages in state', this.state.messages) &&
             this.state.messages.map((message, i) => (
               <li
                 key={i}
@@ -102,7 +102,7 @@ class ContentArea extends React.Component {
                   message.from === window.localStorage.username ? 'me' : 'them'
                 }
               >
-                <span>{message.content}</span>
+                <span>{message}</span>
               </li>
             ))}
         </div>
