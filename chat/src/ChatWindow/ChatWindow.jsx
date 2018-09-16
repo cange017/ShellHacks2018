@@ -17,7 +17,7 @@ const endpoints = {
 };
 
 // Abstract API request function
-async function makeApiRequest(endpoint, data, type, authNeeded) {
+ function makeApiRequest(endpoint, data, type, authNeeded) {
     var httpRequest = new XMLHttpRequest();
 
   var url = "https://www.googleapis.com/language/translate/v2/" + endpoint;
@@ -34,7 +34,7 @@ async function makeApiRequest(endpoint, data, type, authNeeded) {
     url += "&source=" + data.sourceLang;
   }
 httpRequest.open(GET, url, false);
-    await httpRequest.send();
+    httpRequest.send();
     return httpRequest.response;
   // Return response from API
 }
