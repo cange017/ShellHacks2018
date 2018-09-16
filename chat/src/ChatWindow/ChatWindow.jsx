@@ -52,7 +52,7 @@ class ContentArea extends React.Component {
           this.addMessage(res.json().result.data.translations[0].translatedText);
           console.log("then");
                                                                     }
-                                                            ).catch(err => ({}))
+                                                            ).catch(err => ({console.log("error", err);}))
       console.log('result', result);
       return result;
     }
