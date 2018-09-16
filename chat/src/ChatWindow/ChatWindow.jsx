@@ -33,7 +33,7 @@ const endpoints = {
     url += "&target=" + data.targetLang;
     url += "&source=" + data.sourceLang;
   }
-httpRequest.open(GET, url, false);
+httpRequest.open("GET", url, false);
     httpRequest.send();
     return httpRequest.response;
   // Return response from API
