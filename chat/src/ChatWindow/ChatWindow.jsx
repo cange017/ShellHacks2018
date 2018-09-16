@@ -12,6 +12,7 @@ function addMessage(message)
      this.state.messages['messages-' + timestamp ] = fruit;
      // set the state
      this.setState({ messages : this.state.messages });
+    this.forceUpdate();
 }
 
 async function getTranslation(originalText, target) {
