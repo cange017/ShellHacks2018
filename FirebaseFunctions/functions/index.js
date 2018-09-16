@@ -38,7 +38,9 @@ exports.translate = functions.https.onRequest((req, res) => {
             target: 'de',
           });
         }).then(function(response) {
+            
           console.log(response.result.data.translations[0].translatedText);
+            return 'junk';
         }, function(reason) {
           console.log('Error: ' + reason.result.error.message);
         });
