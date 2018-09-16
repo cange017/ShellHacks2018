@@ -5,6 +5,10 @@ const admin = require('firebase-admin');
 const googleTranslate = require('@google-cloud/translate');
 // Your Google Cloud Platform project ID
 const projectId = 'shellchat2018';
+
+const translate = new googleTranslate({
+        projectId: projectId
+    , });
 // Instantiates a client
 // Take the text parameter passed to this HTTP endpoint and insert it into the
 // Realtime Database under the path /messages/:pushId/original
@@ -13,9 +17,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     const language = req.query.language;
     const id = req.query.id;
     console.log("ver 6");
-    const translate = new googleTranslate({
-        projectId: projectId
-    , });
+    
     // The text to translate
     const text = 'Hello, world!';
     // The target language
