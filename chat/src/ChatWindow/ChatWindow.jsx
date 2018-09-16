@@ -1,30 +1,6 @@
 import React from 'react';
 
-function addMessage(message)
-{
-    //create a unike key for each new fruit item
-     var timestamp = (new Date()).getTime();
-     if(!ContentArea.state.messages)
-        {
-         ContentArea.state.messages = [];
-        }
-     // update the state object
-     ContentArea.state.messages['messages-' + timestamp ] = fruit;
-     // set the state
-     ContentArea.setState({ messages : ContentArea.state.messages });
-    ContentArea.forceUpdate();
-}
 
-async function getTranslation(originalText, target) {
-  console.log('originalText', originalText);
-  console.log('target', target);
-  let url = `https://translation.googleapis.com/language/translate/v2?key=AIzaSyDj8r082goFM0L51LrF55UKJInRtX5G0UA&q=${originalText}&target=${target}`;
-  let result = await fetch(url, { method: 'POST' }).then(res => {addMessage(res.json().result.data.translations[0].translatedText);
-                                                                }
-                                                        ).catch(err => ({}))
-  console.log('result', result);
-  return result;
-}
 
 // chat user's name
 class ChatHeader extends React.Component {
@@ -54,7 +30,31 @@ class ChatHeader extends React.Component {
 class ContentArea extends React.Component {
     
     
-    
+    addMessage(message)
+    {
+        //create a unike key for each new fruit item
+         var timestamp = (new Date()).getTime();
+         if(!this.state.messages)
+            {
+             this.state.messages = [];
+            }
+         // update the state object
+         this.state.messages['messages-' + timestamp ] = fruit;
+         // set the state
+         this.setState({ messages : this.state.messages });
+        this.forceUpdate();
+    }
+
+    async getTranslation(originalText, target) {
+      console.log('originalText', originalText);
+      console.log('target', target);
+      let url = `https://translation.googleapis.com/language/translate/v2?key=AIzaSyDj8r082goFM0L51LrF55UKJInRtX5G0UA&q=${originalText}&target=${target}`;
+      let result = await fetch(url, { method: 'POST' }).then(res => {this.addMessage(res.json().result.data.translations[0].translatedText);
+                                                                    }
+                                                            ).catch(err => ({}))
+      console.log('result', result);
+      return result;
+    }
     
     componentDidMount() {
         console.log('mounted');
@@ -81,7 +81,7 @@ class ContentArea extends React.Component {
         {
             console.log('mounted3');
             console.log('messages', correctChat.messages);
-            correctChat.messages.map((message,i) => getTranslation(message.content, 'es'));
+            correctChat.messages.map((message,i) => this.getTranslation(message.content, 'es'));
             
         }
     try {
