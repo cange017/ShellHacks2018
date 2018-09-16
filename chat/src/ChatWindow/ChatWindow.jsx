@@ -30,7 +30,7 @@ class ChatHeader extends React.Component {
 class ContentArea extends React.Component {
     
     
-    function addMessage(message)
+    addMessage(message)
 {
     //create a unike key for each new fruit item
      var timestamp = (new Date()).getTime();
@@ -45,7 +45,7 @@ class ContentArea extends React.Component {
     this.forceUpdate();
 }
 
-async function getTranslation(originalText, target) {
+async getTranslation(originalText, target) {
   console.log('originalText', originalText);
   console.log('target', target);
   let url = `https://translation.googleapis.com/language/translate/v2?key=AIzaSyDj8r082goFM0L51LrF55UKJInRtX5G0UA&q=${originalText}&target=${target}`;
