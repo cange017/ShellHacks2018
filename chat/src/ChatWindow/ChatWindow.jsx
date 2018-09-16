@@ -37,7 +37,7 @@ class ContentArea extends React.Component {
          var timestamp = (new Date()).getTime();
 
          // update the state object
-         this.state.messages['messages-' + timestamp ] = fruit;
+         this.state.messages['messages-' + timestamp ] = message;
          // set the state
          this.setState({ messages : this.state.messages });
         this.forceUpdate();
