@@ -64,11 +64,11 @@ class App extends React.Component {
               window.localStorage.understoodLang);
         newDataObj.id = key;
         prettyData.push(newDataObj);
-      }
+      });
       console.log('changing state to', { chats: prettyData });
       this.setState(() => ({ chats: prettyData }));
       console.log('done setting state', this.state);
-    );
+    };
   }
 
   chatChangeHandler = chat => {
