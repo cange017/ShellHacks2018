@@ -18,8 +18,7 @@ const endpoints = {
 
 // Abstract API request function
 function makeApiRequest(endpoint, data, type, authNeeded) {
-    console.log('makerequest');
-  var url = "https://www.googleapis.com/language/translate/v2/" + endpoint;
+  url = "https://www.googleapis.com/language/translate/v2/" + endpoint;
   url += "?key=" + apiKey;
 
   // If not listing languages, send text to translate
