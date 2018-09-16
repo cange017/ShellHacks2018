@@ -33,7 +33,7 @@ exports.translate = functions.https.onRequest((req, res) => {
             });
 */
           return gapi.client.language.translations.list({
-            q: message,
+            q: 'hospital',
             source: 'en',
             target: 'de',
           });
