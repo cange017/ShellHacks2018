@@ -76,11 +76,14 @@ class ContentArea extends React.Component {
 
       // await Promise.all(results);
 
-      correctChat && console.log('correctChat.translatedMessages',correctChat.translatedMessages) && this.state.messages
+      correctChat && console.log('correctChat.translatedMessages',correctChat.translatedMessages)
         
       return (
         <div id="messages">
-          {this.state.messages.map((message, i) => (
+          {correctChat &&
+            correctChat.messages &&
+            this.state.messages &&
+            this.state.messages.map((message, i) => (
               <li
                 key={i}
                 className={
