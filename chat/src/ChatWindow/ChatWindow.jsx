@@ -83,6 +83,14 @@ class ContentArea extends React.Component {
     let correctChat = this.props.chats.find(
       chat => chat.id === this.props.selectedChat
     );
+      
+      if(!this.state.messages)
+        {
+            console.log('mounted4');
+            console.log('messages', correctChat.messages);
+            correctChat.messages.map((message,i) => this.getTranslation(message.content, 'es'));
+            
+        }
     try {
       // let translatedMessagesForCorrectChat = [];
       // let results = correctChat.messages.map(message =>
