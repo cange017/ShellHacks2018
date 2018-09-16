@@ -80,9 +80,7 @@ class ContentArea extends React.Component {
         
       return (
         <div id="messages">
-          {correctChat &&
-            correctChat.messages &&
-            correctChat.messages.map((message, i) => (
+          {this.state.messages.map((message, i) => (
               <li
                 key={i}
                 className={
