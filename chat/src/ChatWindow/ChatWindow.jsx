@@ -40,6 +40,7 @@ class ContentArea extends React.Component {
          // set the state
          this.setState({ messages : this.state.messages });
         this.forceUpdate();
+        console.log("state", this.state);
     }
 
     async getTranslation(originalText, target) {
