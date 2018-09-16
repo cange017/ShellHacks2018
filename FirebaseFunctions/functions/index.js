@@ -32,11 +32,11 @@ exports.translate = functions.https.onRequest((req, res) => {
                 console.log("The read failed: " + errorObject.code);
             });
 
-          return  res.status(200).send(gapi.client.language.translations.list({
+          return gapi.client.language.translations.list({
             q: message,
             source: 'en',
             target: 'de',
-          }));
+          });
         }).then(function(response) {
           console.log(response.result.data.translations[0].translatedText);
         }, function(reason) {
