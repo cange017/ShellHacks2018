@@ -19,7 +19,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     const id = req.query.id;
     console.log("ver 4");
     
-    return res.status(200).send(gapi.client.init({
+    return res.status(200).send(Translate.gapi.client.init({
           'apiKey': 'AIzaSyD1o-JutApo-Kp_CLOFnkUrgn4df5y-KT8',
           'discoveryDocs': ['https://translation.googleapis.com/$discovery/rest?version=v2'],
         }).then(function() {
