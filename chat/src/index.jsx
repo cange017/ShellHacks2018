@@ -57,7 +57,7 @@ class App extends React.Component {
       for (let key in data) {
         newDataObj.id = key;
         prettyData.push(newDataObj);
-      });
+      }
       console.log('changing state to', { chats: prettyData });
       this.setState(() => ({ chats: prettyData }));
       console.log('done setting state', this.state);
