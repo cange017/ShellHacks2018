@@ -6,13 +6,27 @@ const Translate = require('@google-cloud/translate');
 // Your Google Cloud Platform project ID
 const projectId = 'shellchat2018';
 // Instantiates a client
-admin.initializeApp();
 // Take the text parameter passed to this HTTP endpoint and insert it into the
 // Realtime Database under the path /messages/:pushId/original
 exports.translate = functions.https.onRequest((req, res) => {
+    admin.initializeApp();
     const language = req.query.language;
     const id = req.query.id;
     console.log("ver 5");
-    
+    const translate = new Translate({
+        projectId: projectId
+    , });
+    // The text to translate
+    const text = 'Hello, world!';
+    // The target language
+    const target = 'ru';
+    // Translates some text into Russian
+    translate.translate(text, target).then(results => {
+        const translation = results[0];
+        console.log(`Text: ${text}`);
+        console.log(`Translation: ${translation}`);
+    }).catch(err => {
+        console.error('ERROR:', err);
+    });
     return res.status(200).send('none');
 });
