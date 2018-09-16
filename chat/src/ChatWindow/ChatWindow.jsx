@@ -4,6 +4,10 @@ function addMessage(message)
 {
     //create a unike key for each new fruit item
      var timestamp = (new Date()).getTime();
+     if(!this.state.messages
+        {
+         this.state.message = [];
+        }
      // update the state object
      this.state.messages['messages-' + timestamp ] = fruit;
      // set the state
