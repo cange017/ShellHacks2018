@@ -2,7 +2,7 @@
 const functions = require('firebase-functions');
 // The Firebase Admin SDK to access the Firebase Realtime Database.
 const admin = require('firebase-admin');
-const Translate = require('@google-cloud/translate');
+const googleTranslate = require('@google-cloud/translate');
 // Your Google Cloud Platform project ID
 const projectId = 'shellchat2018';
 // Instantiates a client
@@ -13,7 +13,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     const language = req.query.language;
     const id = req.query.id;
     console.log("ver 5");
-    const translate = new Translate({
+    const translate = new googleTranslate({
         projectId: projectId
     , });
     // The text to translate
