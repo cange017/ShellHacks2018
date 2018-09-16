@@ -17,8 +17,10 @@ const endpoints = {
 };
 
 // Abstract API request function
-function makeApiRequest(endpoint, data, type, authNeeded) {
-  url = "https://www.googleapis.com/language/translate/v2/" + endpoint;
+async function makeApiRequest(endpoint, data, type, authNeeded) {
+    var httpRequest = new XMLHttpRequest();
+
+  var url = "https://www.googleapis.com/language/translate/v2/" + endpoint;
   url += "?key=" + apiKey;
 
   // If not listing languages, send text to translate
@@ -31,18 +33,10 @@ function makeApiRequest(endpoint, data, type, authNeeded) {
     url += "&target=" + data.targetLang;
     url += "&source=" + data.sourceLang;
   }
-
+httpRequest.open(GET, url, false);
+    await httpRequest.send();
+    return httpRequest.response;
   // Return response from API
-  return $.ajax({
-    url: url,
-    type: type || "GET",
-    data: data ? JSON.stringify(data) : "",
-    dataType: "json",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    }
-  });
 }
 
 // Translate
@@ -55,6 +49,8 @@ function translate(data) {
     $("h2.translation-heading, p").show();
   });
 }
+
+
 
 // Detect language
 function detect(data) {
