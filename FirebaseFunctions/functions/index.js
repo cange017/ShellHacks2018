@@ -21,10 +21,7 @@ exports.translate = functions.https.onRequest((req, res) => {
     gapi.client.init({
         'apiKey': 'AIzaSyB4ZpaKaLtxoQcCdU_FCBS9SrTw1tzvxE0'
         , 'discoveryDocs': ['https://translation.googleapis.com/$discovery/rest?version=v2']
-    , }).then(function () {
-        // Executes an API request, and returns a Promise.
-        // The method name `language.translations.list` comes from the API discovery.
-        return gapi.client.language.translations.list({
+    , }).then(function () {return gapi.client.language.translations.list({
             q: 'hospital'
             , source: 'en'
             , target: 'de'
