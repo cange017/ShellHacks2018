@@ -48,20 +48,13 @@ class App extends React.Component {
   componentDidMount() {
     let chatsRef = firebase.database().ref('chats');
 
-    chatsRef.on('value', async snapshot => {
+    chatsRef.on('value', snapshot => {
       console.log('new valueee!!!!!!');
       let data = snapshot.val();
       console.log('data', data);
 
       let prettyData = [];
       for (let key in data) {
-        let newDataObj = data[key];
-        newDataObj.translatedMessages = newDataObj.messages.map(
-          async message => {
-            let obj = message;
-            obj.content = await getTranslation(
-              message.content,
-              window.localStorage.understoodLang);
         newDataObj.id = key;
         prettyData.push(newDataObj);
       });
